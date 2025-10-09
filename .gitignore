@@ -220,3 +220,4 @@ pack/
 .venv/
 .vscode/settings.json
 .env
+.secrets.toml

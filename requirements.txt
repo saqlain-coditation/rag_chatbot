@@ -86,7 +86,6 @@ llama-index-llms-cohere==0.6.1
 llama-index-llms-gemini==0.6.1
 llama-index-llms-google-genai==0.6.2
 llama-index-llms-openai==0.5.6
-llama-index-packs-rag-evaluator @ file:///Users/admin/src/plant360/poc/rag/pack
 llama-index-postprocessor-cohere-rerank==0.5.1
 llama-index-readers-file==0.5.4
 llama-index-readers-llama-parse==0.5.1
