@@ -90,11 +90,10 @@ def main():
     else:
         st.info("No index found. Please create one from uploaded documents.")
         if st.button("⚙️ Create Index"):
-            if "index" not in st.session_state:
-                with st.spinner("Creating index from uploaded documents..."):
-                    index = load_index(UPLOAD_NAME)
-                    st.session_state.index = index
-                    st.session_state.index_path = INDEX_DIR
+            with st.spinner("Creating index from uploaded documents..."):
+                index = load_index(UPLOAD_NAME)
+                st.session_state.index = index
+                st.session_state.index_path = INDEX_DIR
             st.success("Index created successfully!")
             st.rerun()
 
