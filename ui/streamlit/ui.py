@@ -16,7 +16,7 @@ def save_uploaded_file(uploaded_file, upload_dir):
 def main():
     # --- Config ---
     UPLOAD_NAME = "uploads"
-    UPLOAD_DIR = f"data/input/{UPLOAD_NAME}"
+    UPLOAD_DIR = os.path.join("data", "input", "uploads")
     os.makedirs(UPLOAD_DIR, exist_ok=True)
 
     st.set_page_config(page_title="RAG File Manager & Chat", layout="wide")
