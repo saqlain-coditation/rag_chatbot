@@ -225,3 +225,4 @@ pack/
 .index/
 .logs/
 input/
+.*venv/
