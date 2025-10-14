@@ -10,6 +10,7 @@
             "request": "launch",
             "module": "app",
             "console": "internalConsole",
+            "justMyCode": false,
         },
         {
             "name": "Python Debugger: Current File",
@@ -17,16 +18,35 @@
             "request": "launch",
             "program": "${file}",
             "console": "internalConsole",
+            "justMyCode": false,
         },
         {
-            "name": "Python: Streamlit",
+            "name": "RAG: Chat",
             "type": "debugpy",
             "request": "launch",
-            "module": "streamlit",
+            "module": "run",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+        },
+        {
+            "name": "RAG: Cli",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "cli.py",
             "console": "internalConsole",
+            "justMyCode": false,
+        },
+        {
+            "name": "RAG: UI",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "chainlit",
+            "console": "internalConsole",
+            "justMyCode": false,
             "args": [
                 "run",
-                "app.py",
+                "ui.py",
+                "-w"
             ]
         }
     ]

@@ -1,27 +1,27 @@
-from typing import Dict, List
-from llama_index.core.schema import Document
-from llama_index.core.llms.llm import LLM
-from llama_index.core.base.base_query_engine import BaseQueryEngine
-from llama_index.core.llama_dataset.generator import RagDatasetGenerator
-from llama_index.core.llama_dataset import LabelledRagDataset
-from llama_index.core.base.base_retriever import BaseRetriever
+from typing import Dict, List, Optional
 
-from llama_index.core.evaluation import (
-    RetrieverEvaluator,
-    BatchEvalRunner,
-    FaithfulnessEvaluator,
-    CorrectnessEvaluator,
-    RelevancyEvaluator,
-    AnswerRelevancyEvaluator,
-    SemanticSimilarityEvaluator,
-    ContextRelevancyEvaluator,
-    EvaluationResult,
-    RetrievalEvalResult,
-)
-from llama_index.core.llama_pack import download_llama_pack
-from llama_index.core.evaluation import generate_qa_embedding_pairs
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
+from llama_index.core.base.base_query_engine import BaseQueryEngine
+from llama_index.core.base.base_retriever import BaseRetriever
+from llama_index.core.evaluation import (
+    AnswerRelevancyEvaluator,
+    BatchEvalRunner,
+    ContextRelevancyEvaluator,
+    CorrectnessEvaluator,
+    EvaluationResult,
+    FaithfulnessEvaluator,
+    RelevancyEvaluator,
+    RetrievalEvalResult,
+    RetrieverEvaluator,
+    SemanticSimilarityEvaluator,
+    generate_qa_embedding_pairs,
+)
+from llama_index.core.llama_dataset import LabelledRagDataset
+from llama_index.core.llama_dataset.generator import RagDatasetGenerator
+from llama_index.core.llama_pack import download_llama_pack
+from llama_index.core.llms.llm import LLM
+from llama_index.core.schema import Document
 
 from rag.lib.reader import DocumentReader
 
@@ -89,7 +89,7 @@ def generate_rag_dataset(
 async def evaluate_rag(
     query_engine: BaseQueryEngine,
     rag_dataset: LabelledRagDataset,
-    llm: LLM = None,
+    llm: Optional[LLM] = None,
 ):
     RagEvaluatorPack = download_llama_pack("RagEvaluatorPack", "./pack")
     rag_evaluator = RagEvaluatorPack(

@@ -1,16 +1,14 @@
 from llama_index.core import Settings
-
-from llama_index.core.llms.llm import LLM
 from llama_index.core.base.embeddings.base import BaseEmbedding
+from llama_index.core.llms.llm import LLM
 
-from config import llm, embedding, evaluator
-
-from rag.lib.reader import DocumentReader
-from rag.lib.index import load_index, default_splitter
-from rag.lib.retriever import hybrid_search_retriever
-from rag.lib.reranker import llm_reranker
-from rag.lib.engine import create_sub_question_query_engine, create_query_engine
+from config import embedding, evaluator, llm
+from rag.lib.engine import create_query_engine, create_sub_question_query_engine
 from rag.lib.evalutator import evaluate, test
+from rag.lib.index import default_splitter, load_index
+from rag.lib.reader import DocumentReader
+from rag.lib.reranker import llm_reranker
+from rag.lib.retriever import hybrid_search_retriever
 
 
 def setup(
