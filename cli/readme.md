@@ -7,7 +7,7 @@
     - winget install tesseract-ocr.tesseract
 
 ## Packaging:
-`pyinstaller --onefile app.py --hidden-import=tiktoken_ext.openai_public --hidden-import=tiktoken_ext`
+`pyinstaller app.spec`
 
 #### Execution Instructions:
 - Give execution permissions `chmod +x app`

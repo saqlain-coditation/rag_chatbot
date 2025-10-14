@@ -8,7 +8,6 @@ from llama_index.core.readers.file.base import get_default_fs, is_default_fs
 from llama_index.core.schema import Document
 from PIL import Image
 from PIL.ImageFile import ImageFile
-from regex import T
 from tenacity import retry, stop_after_attempt
 
 from lib.rag.utils.ocr import ocr

@@ -226,3 +226,4 @@ pack/
 .logs/
 input/
 .*venv/
+.*dependencies/
