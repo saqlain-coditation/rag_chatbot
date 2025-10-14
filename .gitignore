@@ -214,9 +214,14 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-data/
-pack/
 .venv/
 .vscode/settings.json
 .env
 .secrets.toml
+data/
+pack/
+.chainlit/
+.files/
+.index/
+.logs/
+input/
